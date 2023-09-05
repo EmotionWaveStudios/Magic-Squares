@@ -46,6 +46,7 @@ const App = () => {
           className="text-center border-black border-2 p-4 text-2xl"
           min={1}
           max={9}
+          required
         />
 
         <input
@@ -54,6 +55,7 @@ const App = () => {
           className="text-center border-black border-2 p-4 text-2xl"
           min={1}
           max={9}
+          required
         />
 
         <input
@@ -62,6 +64,7 @@ const App = () => {
           className="text-center border-black border-2 p-4 text-2xl"
           min={1}
           max={9}
+          required
         />
       </div>
 
@@ -72,6 +75,7 @@ const App = () => {
           className="text-center border-black border-2 p-4 text-2xl"
           min={1}
           max={9}
+          required
         />
 
         <input
@@ -80,6 +84,7 @@ const App = () => {
           className="text-center border-black border-2 p-4 text-2xl"
           min={1}
           max={9}
+          required
         />
 
         <input
@@ -88,6 +93,7 @@ const App = () => {
           className="text-center border-black border-2 p-4 text-2xl"
           min={1}
           max={9}
+          required
         />
       </div>
 
@@ -98,6 +104,7 @@ const App = () => {
           className="text-center border-black border-2 p-4 text-2xl"
           min={1}
           max={9}
+          required
         />
 
         <input
@@ -106,6 +113,7 @@ const App = () => {
           className="text-center border-black border-2 p-4 text-2xl"
           min={1}
           max={9}
+          required
         />
 
         <input
@@ -114,6 +122,7 @@ const App = () => {
           className="text-center border-black border-2 p-4 text-2xl"
           min={1}
           max={9}
+          required
         />
       </div>
 
