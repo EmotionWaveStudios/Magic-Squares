@@ -1,35 +1,140 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+const App = () => {
+  function checkAnswer() {
+    let blockOne = parseInt(document.getElementById("1x1").value);
+    let blockTwo = parseInt(document.getElementById("1x2").value);
+    let blockThree = parseInt(document.getElementById("1x3").value);
+    let blockFour = parseInt(document.getElementById("2x1").value);
+    let blockFive = parseInt(document.getElementById("2x2").value);
+    let blockSix = parseInt(document.getElementById("2x3").value);
+    let blockSeven = parseInt(document.getElementById("3x1").value);
+    let blockEight = parseInt(document.getElementById("3x2").value);
+    let blockNine = parseInt(document.getElementById("3x3").value);
 
-function App() {
-  const [count, setCount] = useState(0)
+    if (
+      blockOne + blockTwo + blockThree &&
+      blockOne + blockFive + blockSix &&
+      blockOne + blockFour + blockSeven &&
+      blockTwo + blockFive + blockEight &&
+      blockFour + blockFive + blockSix &&
+      blockSeven + blockNine + blockEight &&
+      blockThree + blockSix + blockNine &&
+      blockThree + blockFive + blockSeven === 15
+    ) {
+      document.getElementById("verification").innerText =
+        "Your magic square is correct";
+    } else if (
+      blockOne + blockTwo + blockThree ||
+      blockOne + blockFive + blockSix ||
+      blockOne + blockFour + blockSeven ||
+      blockTwo + blockFive + blockEight ||
+      blockFour + blockFive + blockSix ||
+      blockSeven + blockNine + blockEight ||
+      blockThree + blockSix + blockNine ||
+      blockThree + blockFive + blockSeven !== 15
+    ) {
+      document.getElementById("verification").innerText =
+        "Your magic square is incorrect";
+    }
+  }
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <div className="text-center pt-[100px]">
+      <div id="row-1">
+        <input
+          id="1x1"
+          type="number"
+          className="text-center border-black border-2 p-4 text-2xl"
+          min={1}
+          max={9}
+          required
+        />
 
-export default App
+        <input
+          id="1x2"
+          type="number"
+          className="text-center border-black border-2 p-4 text-2xl"
+          min={1}
+          max={9}
+          required
+        />
+
+        <input
+          id="1x3"
+          type="number"
+          className="text-center border-black border-2 p-4 text-2xl"
+          min={1}
+          max={9}
+          required
+        />
+      </div>
+
+      <div id="row-2">
+        <input
+          id="2x1"
+          type="number"
+          className="text-center border-black border-2 p-4 text-2xl"
+          min={1}
+          max={9}
+          required
+        />
+
+        <input
+          id="2x2"
+          type="number"
+          className="text-center border-black border-2 p-4 text-2xl"
+          min={1}
+          max={9}
+          required
+        />
+
+        <input
+          id="2x3"
+          type="number"
+          className="text-center border-black border-2 p-4 text-2xl"
+          min={1}
+          max={9}
+          required
+        />
+      </div>
+
+      <div id="row-3">
+        <input
+          id="3x1"
+          type="number"
+          className="text-center border-black border-2 p-4 text-2xl"
+          min={1}
+          max={9}
+          required
+        />
+
+        <input
+          id="3x2"
+          type="number"
+          className="text-center border-black border-2 p-4 text-2xl"
+          min={1}
+          max={9}
+          required
+        />
+
+        <input
+          id="3x3"
+          type="number"
+          className="text-center border-black border-2 p-4 text-2xl"
+          min={1}
+          max={9}
+          required
+        />
+      </div>
+
+      <button
+        id="check-answer"
+        onClick={checkAnswer}
+        className="text-center border-black border-2 rounded-xl py-2 px-3 m-4 text-lg font-bold"
+      >
+        Check Magic Square
+      </button>
+    </div>
+  );
+};
+
+export default App;
